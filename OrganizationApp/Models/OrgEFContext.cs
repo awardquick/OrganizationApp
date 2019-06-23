@@ -5,7 +5,7 @@ using OrganizationApp.Models;
 
 namespace OrganizationApp
 {
-    public partial class  OrgEFContext : DbContext
+    public partial class OrgEFContext : DbContext
     {
         public OrgEFContext()
         {
@@ -16,14 +16,14 @@ namespace OrganizationApp
         {
         }
 
-        public virtual DbSet<Organization> Organization { get; set; }
+        public virtual DbSet<Organizations> Organizations { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-               
+
             }
         }
 
@@ -31,7 +31,7 @@ namespace OrganizationApp
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
-            modelBuilder.Entity<Organization>(entity =>
+            modelBuilder.Entity<Organizations>(entity =>
             {
                 entity.Property(e => e.OrganizationId)
                     .HasColumnName("OrganizationID")

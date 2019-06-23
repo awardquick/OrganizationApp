@@ -27,7 +27,7 @@ namespace OrganizationApp
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             var connectionString = Configuration.GetConnectionString("MyDbConnection");
-            services.AddDbContext<ApplicationEntities>(
+            services.AddDbContext<OrgEFContext>(
                 options => options.UseSqlServer(connectionString));
 
             // In production, the Angular files will be served from this directory
@@ -35,6 +35,8 @@ namespace OrganizationApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,14 +9,14 @@ namespace OrganizationApp.Repository
 {
     public interface IOrgRepository
     {
-        IEnumerable<Organization> GetAll();
-        Organization GetById(int id);
+        IEnumerable<Organizations> GetAll();
+        Organizations GetById(int id);
 
-        IEnumerable<Organization> FindByCondition(Expression<Func<Organization, bool>> expression);
-        void Add(Organization organization);
+        IEnumerable<Organizations> FindByCondition(Expression<Func<Organizations, bool>> expression);
+        void Add(Organizations organization);
 
-        void Update(Organization organizationChanges);
+        void Update(Organizations organizationChanges);
 
-        void Delete(Organization entity);
+        void Delete(Organizations entity);
     }
 }
