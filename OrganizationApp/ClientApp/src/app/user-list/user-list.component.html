@@ -1,3 +1,23 @@
-<p>
-  user-list works!
-</p>
+<div class="row">
+  <h2> User Details</h2>
+  <div class="user-info col-lg-12 table-responsive table-container">
+    <table class="user-props">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Status</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Delete User</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.userStatus}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.userRole}}</td>
+        <td><button (click)="deleteUser(user.userId)">Delete</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

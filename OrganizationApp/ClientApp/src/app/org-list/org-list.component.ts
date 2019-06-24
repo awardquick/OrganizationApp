@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../shared/dataService";
-import { Organization } from "../shared/organization";
+import { DataService } from "../shared/dataservice";
+import { Observable } from 'rxjs';
+import { Organization } from "../models/organization";
+import { UserListComponent } from '../user-list/user-list.component';
 
 @Component({
   selector: 'app-org-list',
@@ -9,19 +11,32 @@ import { Organization } from "../shared/organization";
 })
 export class OrgListComponent implements OnInit {
 
-  constructor(private data: DataService) {
-    this.organizations = data.organizations;
-  }
+  constructor(private dataSvc: DataService) { }
 
-  public organizations: Organization[]= [];
+  public organizations: Organization[] = [];
 
   ngOnInit() {
-    this.data.getOrganizations()
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.dataSvc.getOrganizations()
       .subscribe(success => {
-        if (success) {
-          this.organizations = this.data.organizations;
+        if(success) {
+          this.organizations = this.dataSvc.organizations;
+          console.log(this.organizations);
         }
-      });
+      })
+  }
+
+  deleteOrg(id: number) {
+    console.log(id);
+    this.dataSvc.deleteOrganization(id)
+      .subscribe((data) => {
+          console.log(data);
+          this.reloadData();
+      },
+     error => console.log(error));
   }
 
 }

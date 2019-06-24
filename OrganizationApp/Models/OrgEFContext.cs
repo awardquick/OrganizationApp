@@ -35,7 +35,7 @@ namespace OrganizationApp
             {
                 entity.Property(e => e.OrganizationId)
                     .HasColumnName("OrganizationID")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Address)
                     .IsRequired()
@@ -60,7 +60,7 @@ namespace OrganizationApp
 
                 entity.Property(e => e.UserId)
                     .HasColumnName("UserID")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Email)
                     .IsRequired()

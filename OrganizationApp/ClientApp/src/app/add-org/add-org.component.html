@@ -1,3 +1,35 @@
-<p>
-  add-org works!
-</p>
+<h3>Add Organization</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Organization Name</label>
+      <input type="text" class="form-control" id="orgName" required [(ngModel)]="organization.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="orgAddress" required [(ngModel)]="organization.address" name="address">
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="orgCity" required [(ngModel)]="organization.city" name="city">
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="orgState" required [(ngModel)]="organization.state" name="state">
+    </div>
+
+    <div class="form-group">
+      <label for="zip">Zip Code</label>
+      <input type="text" class="form-control" id="orgZip" required [(ngModel)]="organization.zip" name="zip">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+</div>

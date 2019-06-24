@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -11,7 +10,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { OrgListComponent } from './org-list/org-list.component';
 import { AddOrgComponent } from './add-org/add-org.component';
-import { DataService } from './shared/dataService';
+import { DataService } from './shared/dataservice';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UserListComponent } from './user-list/user-list.component';
 
@@ -41,7 +40,7 @@ import { UserListComponent } from './user-list/user-list.component';
   ],
   providers: [
     DataService
-  ],
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

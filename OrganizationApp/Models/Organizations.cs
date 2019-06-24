@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace OrganizationApp.Models
 {
@@ -9,7 +10,7 @@ namespace OrganizationApp.Models
         {
             Users = new HashSet<Users>();
         }
-
+        [Key]
         public int OrganizationId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
