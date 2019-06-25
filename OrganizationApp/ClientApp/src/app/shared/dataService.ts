@@ -45,6 +45,22 @@ export class DataService {
     return this.http.post('/api/users', user);
   }
 
+  updateOrganization(id: number, organization) {
+    return this.http.put('/api/organizations/edit/' + id, organization)
+      .pipe(
+        map((data: any[]) => {
+          this.organizations = data;
+        }));
+  }
+
+  updateUser(id: number, user) {
+    return this.http.put('/api/users/edit/' + id, user)
+      .pipe(
+        map((data: any[]) => {
+          this.users = data;})
+      )
+  }
+
   getUsersByOrg(id: number) {
     return this.http.get('/api/users/usersbyorg/' + id)
       .pipe(

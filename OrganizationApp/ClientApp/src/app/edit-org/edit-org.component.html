@@ -1,7 +1,7 @@
 <div class="container-fluid">
-  <h2 class="text-center"> Add Organization</h2>
+  <h2 class="text-center"> Edit Organization</h2>
 </div>
-<div [hidden]="submitted" style="width: 400px;">
+<div style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Organization Name</label>
@@ -30,8 +30,9 @@
 
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
+
+  <ng-template #loading>
+    <div>Loading...</div>
+  </ng-template>
 </div>
 
-<div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
-</div>

@@ -1,5 +1,7 @@
+<div class="container-fluid">
+  <h2 class="text-sm-center"> Organization Details</h2>
+</div>
 <div class="row">
-  <h2> Organization Details</h2>
   <div class="organization-info col-lg-12 table-responsive table-container">
     <table class="organization-props">
       <tr>
@@ -10,6 +12,7 @@
         <th>Zip</th>
         <th>Add Member</th>
         <th>View Members</th>
+        <th>Edit Organization</th>
         <th>Delete Organizations</th>
       </tr>
       <tr *ngFor="let organization of organizations">
@@ -20,9 +23,11 @@
         <td>{{organization.zip}}</td>
         <td><a class="nav-link" [routerLink]='["/add-user"]' [class.selected]="organization === selectedOrganization"><strong>Add Users</strong></a></td>
         <td><a class="nav-link" [routerLink]='["/user-list"]'><strong>View Members</strong></a></td>
+        <td><a class="nav-link" [routerLink]='["/edit-org"]' [class.selected]="organization === selectedOrganization"><strong>Edit</strong></a></td>
         <td><button (click)="deleteOrg(organization.organizationId)">Delete</button></td>
       </tr>
     </table>
   </div>
   <app-user-list [organization]="selectedOrganization" *ngIf="user"></app-user-list>
+  <app-edit-org *ngIf="organization" [organization]="selectedOrganization"></app-edit-org>
 </div>

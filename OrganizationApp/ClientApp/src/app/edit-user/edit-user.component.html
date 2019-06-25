@@ -1,16 +1,16 @@
 <div class="container-fluid">
-  <h2 class="text-center"> Add User</h2>
+  <h2 class="text-center"> Edit User</h2>
 </div>
   <div [hidden]="submitted" style="width: 400px;">
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="first name">First Name</label>
-        <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstname" name="name">
+        <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstName" name="name">
       </div>
 
       <div class="form-group">
         <label for="last name">Last Name</label>
-        <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastname" name="address">
+        <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastName" name="address">
       </div>
 
       <div class="form-group">
@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <label for="status">Status</label>
-        <select class="form-control" required [(ngModel)]="user.userstatus" name="status">
+        <select class="form-control" required [(ngModel)]="user.userStatus" name="status">
           <option>Active</option>
           <option>InActive</option>
         </select>
@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <label for="role">Role</label>
-        <input type="text" class="form-control" id="userRole" required [(ngModel)]="user.userrole" name="role">
+        <input type="text" class="form-control" id="userRole" required [(ngModel)]="user.userRole" name="role">
       </div>
       <div class="form-group">
         <label for="Organiztion">Organization</label>

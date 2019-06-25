@@ -1,5 +1,8 @@
+<div class="container-fluid">
+  <h2 class="text-center"> User Details</h2>
+</div>
+
 <div class="row">
-  <h2> User Details</h2>
   <div class="user-info col-lg-12 table-responsive table-container">
     <table class="user-props">
       <tr>
@@ -8,6 +11,7 @@
         <th>Status</th>
         <th>Email</th>
         <th>Role</th>
+        <th>Edit User</th>
         <th>Delete User</th>
       </tr>
       <tr *ngFor="let user of users">
@@ -16,8 +20,10 @@
         <td>{{user.userStatus}}</td>
         <td>{{user.email}}</td>
         <td>{{user.userRole}}</td>
+        <td><a class="nav-link" [routerLink]='["/edit-user"]' [class.selected]="user === selectedUser"><strong>Edit</strong></a></td>
         <td><button (click)="deleteUser(user.userId)">Delete</button></td>
       </tr>
     </table>
   </div>
+  <app-edit-user *ngIf="user" [user]="selectedUser"></app-edit-user>
 </div>

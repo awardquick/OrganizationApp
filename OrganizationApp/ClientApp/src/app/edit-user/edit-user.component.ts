@@ -1,26 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../shared/DataService';
-import { User } from '../models/User';
+import { User } from '../models/user';
 import { Organization } from '../models/organization';
 
+
 @Component({
-  selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  selector: 'app-edit-user',
+  templateUrl: './edit-user.component.html',
+  styleUrls: ['./edit-user.component.css']
 })
-export class AddUserComponent implements OnInit {
+export class EditUserComponent implements OnInit {
 
-  user: User = new User();
-  submitted = false;
+  @Input() user: User;
 
-  constructor(private dataSvc: DataService) {
-  }
+  constructor(private dataSvc: DataService) { } 
 
   public organizations: Organization[] = [];
-
+  submitted = false;
 
   ngOnInit() {
     this.loadOrgs();
+    if (this.dataSvc.users) {
+      this.user = this.dataSvc.users[0];
+    }
+    console.log(this.user);
   }
 
   loadOrgs() {
@@ -28,21 +31,18 @@ export class AddUserComponent implements OnInit {
       .subscribe(success => {
         if (success) {
           this.organizations = this.dataSvc.organizations;
+          console.log(this.organizations);
         }
       });
-  }
-
-  newUser(): void {
-    this.submitted = false;
-    this.user = new User();
   }
 
   save() {
     let orgId = this.parseId();
     this.user.organizationId = orgId;
-    this.dataSvc.addUser(this.user)
+    this.dataSvc.updateUser(this.user.userId, this.user)
       .subscribe(data => console.log(data), error => console.log(error));
-    this.user = new User();
+    console.log(this.user);
+    alert("Organization successfully edited")
   }
 
   onSubmit() {

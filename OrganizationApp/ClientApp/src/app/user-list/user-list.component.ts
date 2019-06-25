@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from "../shared/dataservice";
-import { Observable, pipe } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { DataService } from "../shared/DataService";
 import { User } from '../models/User';
 import { Organization } from '../models/organization';
 

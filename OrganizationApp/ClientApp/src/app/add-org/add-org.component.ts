@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataService } from '../shared/dataservice';
+import { DataService } from '../shared/DataService';
 import { Organization } from '../models/organization';
 
 @Component({
@@ -29,7 +27,6 @@ export class AddOrgComponent implements OnInit {
     this.dataSvc.addOrganization(this.organization)
       .subscribe(data => console.log(data), error => console.log(error));
     this.organization = new Organization();
-    console.log(this.organization);
   }
 
   onSubmit() {

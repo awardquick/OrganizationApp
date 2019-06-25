@@ -10,9 +10,11 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { OrgListComponent } from './org-list/org-list.component';
 import { AddOrgComponent } from './add-org/add-org.component';
-import { DataService } from './shared/dataservice';
+import { DataService } from './shared/DataService';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { EditOrgComponent } from './edit-org/edit-org.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { UserListComponent } from './user-list/user-list.component';
     OrgListComponent,
     AddOrgComponent,
     AddUserComponent,
-    UserListComponent
+    UserListComponent,
+    EditUserComponent,
+    EditOrgComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +40,8 @@ import { UserListComponent } from './user-list/user-list.component';
       { path: 'add-org', component: AddOrgComponent },
       { path: 'user-list', component: UserListComponent },
       { path: 'add-user', component: AddUserComponent },
+      { path: 'edit-user', component: EditUserComponent },
+      { path: 'edit-org', component: EditOrgComponent }
     ])
   ],
   providers: [
