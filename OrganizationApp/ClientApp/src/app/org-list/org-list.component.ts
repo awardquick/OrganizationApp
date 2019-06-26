@@ -14,7 +14,6 @@ export class OrgListComponent implements OnInit {
   constructor(private dataSvc: DataService) { }
 	
   public organizations: Organization[] = [];
-  public users: Users[] = [];
   selected = false;
   ngOnInit() {
     this.reloadData();
