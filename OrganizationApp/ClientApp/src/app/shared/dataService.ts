@@ -4,6 +4,8 @@ import { map } from "rxjs/operators";
 import { Observable } from 'rxjs';
 import { Organization } from '../models/organization';
 import { User } from '../models/User';
+import { EmailValidation } from '../models/emaildata';
+
 
 @Injectable()
 
@@ -39,6 +41,10 @@ export class DataService {
           return true;
         }));
 
+  }
+
+  checkEmail(data: Object) {
+    return this.http.post('https://cors-anywhere.herokuapp.com/https://checkemailorg.azurewebsites.net/api/CheckEmail', data);
   }
 
   addUser(user: Object): Observable<Object> {

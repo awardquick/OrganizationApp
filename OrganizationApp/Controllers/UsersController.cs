@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -52,8 +53,8 @@ namespace OrganizationApp.Controllers
 
         }
 
-        // PUT: api/Users/id
-        [HttpPut("{id}")]
+        // PUT: api/Users/edit/id
+        [HttpPut("edit/{id}")]
         public async Task<IActionResult> PutUsers(int id, Users users)
         {
             if (id != users.UserId)
@@ -121,6 +122,31 @@ namespace OrganizationApp.Controllers
 
             return users;
         }
+
+        //private async Task ValidateEmail(string emailToValidate)
+        //{
+        //    string azureBaseUrl = "https://core-mail-validation.azurewebsites.net/api/CheckEmail";
+        //    string urlQueryStringParams = 
+
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        using (HttpResponseMessage res = await client.GetAsync(
+        //        $"{ azureBaseUrl}{urlQueryStringParams}"))
+        //        {
+        //            using(HttpContent content = res.Content)
+        //            {
+        //                string data = await content.ReadAsStringAsync();
+        //                if (data != null)
+        //                {
+        //                    return data;
+        //                }
+        //                else
+        //                    return "";
+        //            }
+
+        //        }
+        //    }
+        //}
 
 
 

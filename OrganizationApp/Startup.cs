@@ -30,6 +30,8 @@ namespace OrganizationApp
             services.AddDbContext<OrgEFContext>(
                 options => options.UseSqlServer(connectionString));
 
+       
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -56,7 +58,6 @@ namespace OrganizationApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

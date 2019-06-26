@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../shared/DataService';
 import { User } from '../models/User';
 import { Organization } from '../models/organization';
+import { HttpClient } from '@angular/common/http';
+import { EmailValidation } from '../models/emaildata';
 
 @Component({
   selector: 'app-add-user',
@@ -10,10 +12,13 @@ import { Organization } from '../models/organization';
 })
 export class AddUserComponent implements OnInit {
 
+
   user: User = new User();
   submitted = false;
+  validation: any;
+  mailData: any;
 
-  constructor(private dataSvc: DataService) {
+  constructor(private dataSvc: DataService, private http: HttpClient) {
   }
 
   public organizations: Organization[] = [];
@@ -46,8 +51,31 @@ export class AddUserComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-    this.save();
+    const emailData = {
+      "email": this.user.email
+    }
+
+    this.dataSvc.checkEmail(emailData).subscribe(data => {
+      this.mailData = data;
+      console.log(this.mailData);
+      if (this.mailData) {
+        if (this.mailData.score < 0.65 && this.mailData.format_valid != true) {
+            alert("Sorry your email doesn't seem to be valid. Please enter a valid Email")
+        }
+        else if(this.mailData = "Please pass an email in the request body"){
+          alert("Email is required in order to submit this form!")
+        }
+          else {
+            this.submitted = true;
+            this.save();
+          }
+        }
+      (error: any) => {
+          console.log(error);
+        }
+    });
+    //this.submitted = true;
+    //this.save();
   }
 
   parseId() {

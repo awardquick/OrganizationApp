@@ -42,8 +42,8 @@ namespace OrganizationApp.Controllers
             return organizations;
         }
 
-        // PUT: api/Organizations/id
-        [HttpPut("{id}")]
+        // PUT: api/Organizations/edit/id
+        [HttpPut("edit/{id}")]
         public async Task<IActionResult> PutOrganizations(int id, Organizations organizations)
         {
             if (id != organizations.OrganizationId)

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrganizationApp", "OrganizationApp\OrganizationApp.csproj", "{8CC94214-D523-4A3B-89E8-091388F505E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrganizationApp", "OrganizationApp\OrganizationApp.csproj", "{8CC94214-D523-4A3B-89E8-091388F505E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckEmail", "CheckEmail\CheckEmail.csproj", "{0551B446-2065-4354-A7E7-9BE833EEE80E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8CC94214-D523-4A3B-89E8-091388F505E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CC94214-D523-4A3B-89E8-091388F505E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CC94214-D523-4A3B-89E8-091388F505E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0551B446-2065-4354-A7E7-9BE833EEE80E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0551B446-2065-4354-A7E7-9BE833EEE80E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0551B446-2065-4354-A7E7-9BE833EEE80E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0551B446-2065-4354-A7E7-9BE833EEE80E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
