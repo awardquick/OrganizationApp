@@ -29,5 +29,5 @@
     </table>
   </div>
   <app-user-list [hidden]="!userspage" organization]="selectedOrganization"></app-user-list>
-  <app-edit-org *ngIf="!organization" [organization]="selectedOrganization"></app-edit-org>
+  <app-edit-org *ngIf="!organizations" [organization]="selectedOrganization"></app-edit-org>
 </div>
