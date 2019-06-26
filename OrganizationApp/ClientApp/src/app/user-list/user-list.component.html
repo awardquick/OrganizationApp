@@ -15,15 +15,15 @@
         <th>Delete User</th>
       </tr>
       <tr *ngFor="let user of users">
-        <td>{{user.firstName}}</td>
-        <td>{{user.lastName}}</td>
-        <td>{{user.userStatus}}</td>
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.userstatus}}</td>
         <td>{{user.email}}</td>
-        <td>{{user.userRole}}</td>
+        <td>{{user.userrole}}</td>
         <td><a class="nav-link" [routerLink]='["/edit-user"]' [class.selected]="user === selectedUser"><strong>Edit</strong></a></td>
         <td><button (click)="deleteUser(user.userId)">Delete</button></td>
       </tr>
     </table>
   </div>
-  <app-edit-user *ngIf="user" [user]="selectedUser"></app-edit-user>
+  <app-edit-user *ngIf="users" [user]="selectedUser"></app-edit-user>
 </div>
