@@ -12,7 +12,7 @@ import { UserListComponent } from '../user-list/user-list.component';
 export class OrgListComponent implements OnInit {
 
   constructor(private dataSvc: DataService) { }
-	
+  userspage = false;
   public organizations: Organization[] = [];
   selected = false;
   ngOnInit() {

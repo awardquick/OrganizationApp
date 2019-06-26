@@ -28,6 +28,6 @@
       </tr>
     </table>
   </div>
-  <app-user-list [organization]="selectedOrganization" *ngIf="users"></app-user-list>
-  <app-edit-org *ngIf="organizations" [organization]="selectedOrganization"></app-edit-org>
+  <app-user-list [hidden]="!userspage" organization]="selectedOrganization" *ngIf="users"></app-user-list>
+  <app-edit-org [hidden] [organization]="selectedOrganization"></app-edit-org>
 </div>
