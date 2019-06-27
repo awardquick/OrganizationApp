@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <h2 class="text-center"> Add User</h2>
 </div>
-  <div [hidden]="submitted" style="width: 400px;">
-    <form (ngSubmit)="onSubmit()">
+  <div  class="list-container" [hidden]="submitted">
+    <form class="add-form" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="first name">First Name</label>
         <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstname" name="name">

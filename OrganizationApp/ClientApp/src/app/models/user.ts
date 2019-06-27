@@ -1,9 +1,9 @@
 export class User {
   userId: number;
-  firstname: string;
-  lastname: string;
-  userstatus: string;
+  firstName: string;
+  lastName: string;
+  userStatus: string;
   email: string;
-  userrole: string;
+  userRole: string;
   organizationId: number;
 }

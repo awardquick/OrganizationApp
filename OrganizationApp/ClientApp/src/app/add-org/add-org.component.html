@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <h2 class="text-center"> Add Organization</h2>
 </div>
-<div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
+<div class="list-container" [hidden]="submitted">
+  <form class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Organization Name</label>
       <input type="text" class="form-control" id="orgName" required [(ngModel)]="organization.name" name="name">

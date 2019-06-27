@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from "../shared/DataService";
-import { User } from '../models/User';
+import { User } from '../models/user';
 import { Organization } from '../models/organization';
 
 @Component({

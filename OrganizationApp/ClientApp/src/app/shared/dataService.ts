@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators";
 import { Observable } from 'rxjs';
 import { Organization } from '../models/organization';
-import { User } from '../models/User';
+import { User } from '../models/user';
 import { EmailValidation } from '../models/emaildata';
 
 

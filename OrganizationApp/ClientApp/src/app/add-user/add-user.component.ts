@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../shared/DataService';
-import { User } from '../models/User';
+import { User } from '../models/user';
 import { Organization } from '../models/organization';
 import { HttpClient } from '@angular/common/http';
 import { EmailValidation } from '../models/emaildata';
@@ -62,7 +62,7 @@ export class AddUserComponent implements OnInit {
         if (this.mailData.score < 0.65 && this.mailData.format_valid != true) {
             alert("Sorry your email doesn't seem to be valid. Please enter a valid Email")
         }
-        else if(this.mailData = "Please pass an email in the request body"){
+        else if(this.mailData == "Please pass an email in the request body"){
           alert("Email is required in order to submit this form!")
         }
           else {

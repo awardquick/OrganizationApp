@@ -10,13 +10,16 @@ import { UserListComponent } from '../user-list/user-list.component';
   styleUrls: ['./org-list.component.css']
 })
 export class OrgListComponent implements OnInit {
-
-  constructor(private dataSvc: DataService) { }
+  loaded: boolean;
   userspage = false;
   public organizations: Organization[] = [];
   selected = false;
+
+  constructor(private dataSvc: DataService) {}
+ 
   ngOnInit() {
     this.reloadData();
+    this.loaded = true;
   }
 
   reloadData() {

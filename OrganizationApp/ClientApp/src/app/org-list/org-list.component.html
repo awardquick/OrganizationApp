@@ -3,7 +3,7 @@
 </div>
 <div class="row">
   <div class="organization-info col-lg-12 table-responsive table-container">
-    <table class="organization-props">
+    <table [hidden]="!loaded"class="organization-props">
       <tr>
         <th>Name</th>
         <th>Address</th>
@@ -21,13 +21,13 @@
         <td>{{organization.city}}</td>
         <td>{{organization.state}}</td>
         <td>{{organization.zip}}</td>
-        <td><a class="nav-link" [routerLink]='["/add-user"]' [class.selected]="organization === selectedOrganization"><strong>Add Users</strong></a></td>
+        <td><a class="nav-link" [routerLink]='["/add-user"]' [class.selected]="organizations === selectedOrganization"><strong>Add Users</strong></a></td>
         <td><a class="nav-link" [routerLink]='["/user-list"]'><strong>View Members</strong></a></td>
         <td><a class="nav-link" [routerLink]='["/edit-org"]' [class.selected]="organization === selectedOrganization"><strong>Edit</strong></a></td>
         <td><button (click)="deleteOrg(organization.organizationId)">Delete</button></td>
       </tr>
     </table>
   </div>
-  <app-user-list [hidden]="!userspage" [organization]="selectedOrganization"></app-user-list>
+  <app-user-list *ngIf="user != undefined" [organization]="selectedOrganization"></app-user-list>
   <app-edit-org *ngIf="!organizations" [organization]="selectedOrganization"></app-edit-org>
 </div>

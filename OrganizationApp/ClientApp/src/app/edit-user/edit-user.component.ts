@@ -23,7 +23,6 @@ export class EditUserComponent implements OnInit {
     if (this.dataSvc.users) {
       this.user = this.dataSvc.users[0];
     }
-    console.log(this.user);
   }
 
   loadOrgs() {
@@ -31,7 +30,6 @@ export class EditUserComponent implements OnInit {
       .subscribe(success => {
         if (success) {
           this.organizations = this.dataSvc.organizations;
-          console.log(this.organizations);
         }
       });
   }
