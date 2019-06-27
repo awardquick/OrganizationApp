@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from "../shared/DataService";
 import { Observable } from 'rxjs';
 import { Organization } from "../models/organization";
+import { User } from "../models/user";
 import { UserListComponent } from '../user-list/user-list.component';
 
 @Component({
@@ -13,6 +14,7 @@ export class OrgListComponent implements OnInit {
   loaded: boolean;
   userspage = false;
   public organizations: Organization[] = [];
+  public user: User[] = [];
   selected = false;
 
   constructor(private dataSvc: DataService) {}
