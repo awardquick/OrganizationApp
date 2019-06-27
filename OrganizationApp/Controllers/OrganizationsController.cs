@@ -76,10 +76,7 @@ namespace OrganizationApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Organizations>> PostOrganizations(Organizations organizations)
         {
-            //if(organizations.OrganizationId == 0)
-            //{
-            //    organizations.OrganizationId = null;
-            //}
+           
             _context.Organizations.Add(organizations);
             try
             {
@@ -110,6 +107,12 @@ namespace OrganizationApp.Controllers
                 return NotFound();
             }
 
+            //if (OrganizationHasUsers(id))
+            //{
+            //    return No
+            //}
+
+            
             _context.Organizations.Remove(organizations);
             await _context.SaveChangesAsync();
 
@@ -119,6 +122,11 @@ namespace OrganizationApp.Controllers
         private bool OrganizationsExists(int id)
         {
             return _context.Organizations.Any(e => e.OrganizationId == id);
+        }
+
+        private bool OrganizationHasUsers(int id)
+        {
+            return _context.Users.Any(e => e.OrganizationId == id);
         }
     }
 }
