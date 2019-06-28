@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DataService } from '../shared/DataService';
+import { DataService, AlertService} from 'src/app/shared';
 import { User } from '../models/user';
 import { Organization } from '../models/organization';
 import { HttpClient } from '@angular/common/http';
@@ -18,7 +18,7 @@ export class AddUserComponent implements OnInit {
   validation: any;
   mailData: any;
 
-  constructor(private dataSvc: DataService, private http: HttpClient) {
+  constructor(private dataSvc: DataService, private http: HttpClient, private alertSvc: AlertService) {
   }
 
   public organizations: Organization[] = [];
@@ -60,7 +60,7 @@ export class AddUserComponent implements OnInit {
       console.log(this.mailData);
       if (this.mailData) {
         if (this.mailData.score < 0.65 && this.mailData.format_valid != true) {
-            alert("Sorry your email doesn't seem to be valid. Please enter a valid Email")
+            this.alertSvc.error("Sorry your email doesn't seem to be valid. Please enter a valid Email")
         }
         else if(this.mailData == "Please pass an email in the request body"){
           alert("Email is required in order to submit this form!")
