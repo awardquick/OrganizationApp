@@ -1,6 +1,6 @@
-<h2> OrganizationApp <h2>
+<h4> OrganizationApp <h4>
 
-#### Challenge Instructions
+<h3> Challenge Instructions <h3>
 
 Be on either AWS or Azure as a native app.
 Leverage some element of Azure or AWS for part of the application functionality.  Does not matter which part or what it actually does, as long as it is somewhat relevant in the overall app.
