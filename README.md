@@ -1,5 +1,12 @@
-### OrganizationApp
+##### OrganizationApp
 
+####Challenge Instructions
+
+Be on either AWS or Azure as a native app.
+Leverage some element of Azure or AWS for part of the application functionality.  Does not matter which part or what it actually does, as long as it is somewhat relevant in the overall app.
+Leverage at least one third party API to demonstrate integration with an API or service, does not matter which one or what it does.
+A reasonably well thought out and clean Ux.  Note we are not evaluating Ux design, however design should be clear, clean, and functional.
+All code must be stored on a Github repository for evaluation.
 
 ##### Design Overview
 This solution was built from the Visual Studio ASP.NET Core 2.2 Angular template. The ASP.Net core app has a hosted service which allows users
