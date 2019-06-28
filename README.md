@@ -14,7 +14,7 @@ The frontend of this application is Angular 6 which is rendered from the appModu
 ## Models
 The models are built off of EF Core with a standard MVC style .net core folder layout. 
 
-##R epository
+## Repository
 I decided to implement the repository pattern keeping in mind a possible future buildout where we wanted to implement more models and methods by which they interact with the DB. All the classes here implement the IOrgrepo generic interface. 
 
 ## Controller
