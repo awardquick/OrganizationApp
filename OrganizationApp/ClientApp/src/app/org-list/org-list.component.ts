@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../shared/DataService";
+import { DataService, AlertService  } from 'src/app/shared';
 import { Observable } from 'rxjs';
 import { Organization } from "../models/organization";
 import { User } from "../models/user";
@@ -17,7 +17,7 @@ export class OrgListComponent implements OnInit {
   public user: User[] = [];
   selected = false;
 
-  constructor(private dataSvc: DataService) {}
+  constructor(private dataSvc: DataService, private alertSvc: AlertService) {}
  
   ngOnInit() {
     this.reloadData();
@@ -36,9 +36,11 @@ export class OrgListComponent implements OnInit {
   deleteOrg(id: number) {
     this.dataSvc.deleteOrganization(id)
       .subscribe((data) => {
-          this.reloadData();
+        this.reloadData();
       },
-     error => console.log(error));
+        error => {
+          this.alertSvc.error(error);
+        });
   }
 
 }

@@ -15,6 +15,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { EditOrgComponent } from './edit-org/edit-org.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditOrgComponent } from './edit-org/edit-org.component';
     AddUserComponent,
     UserListComponent,
     EditUserComponent,
-    EditOrgComponent
+    EditOrgComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
