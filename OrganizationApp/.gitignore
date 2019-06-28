@@ -40,6 +40,7 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 **/appsettings.json
+**/appsettings.Development.json
 *_i.c
 *_p.c
 *_i.h
