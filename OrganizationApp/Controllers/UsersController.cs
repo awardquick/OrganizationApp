@@ -123,41 +123,11 @@ namespace OrganizationApp.Controllers
             return users;
         }
 
-        //private async Task ValidateEmail(string emailToValidate)
-        //{
-        //    string azureBaseUrl = "https://core-mail-validation.azurewebsites.net/api/CheckEmail";
-        //    string urlQueryStringParams = 
-
-        //    using (HttpClient client = new HttpClient())
-        //    {
-        //        using (HttpResponseMessage res = await client.GetAsync(
-        //        $"{ azureBaseUrl}{urlQueryStringParams}"))
-        //        {
-        //            using(HttpContent content = res.Content)
-        //            {
-        //                string data = await content.ReadAsStringAsync();
-        //                if (data != null)
-        //                {
-        //                    return data;
-        //                }
-        //                else
-        //                    return "";
-        //            }
-
-        //        }
-        //    }
-        //}
-
-
 
         private bool UsersExists(int id)
         {
             return _context.Users.Any(e => e.UserId == id);
         }
 
-        private IQueryable<Users> UserbyOrg(int id)
-        {
-            return _context.Users.Where(e => e.OrganizationId == id);
-        }
     }
 }

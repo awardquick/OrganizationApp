@@ -107,12 +107,12 @@ namespace OrganizationApp.Controllers
                 return NotFound();
             }
 
-            //if (OrganizationHasUsers(id))
-            //{
-            //    return No
-            //}
+            if (OrganizationHasUsers(id))
+            {
+                return NotFound("This organization has users currently associated");
+            }
 
-            
+
             _context.Organizations.Remove(organizations);
             await _context.SaveChangesAsync();
 
