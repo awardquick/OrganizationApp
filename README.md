@@ -1,4 +1,4 @@
-##### OrganizationApp
+<h2> OrganizationApp <h2>
 
 #### Challenge Instructions
 
